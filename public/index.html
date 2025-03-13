@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://rifafx.com/site/assets/images/loader.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>RIFAFX Profit Calculator</title>
+
+    <style>
+      /* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom container for the widget */
+.custom-widget-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title style */
+.widget-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for the widget container */
+.forextime-widget {
+    position: relative;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .custom-widget-container {
+        padding: 15px;
+    }
+
+    .widget-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-widget-container {
+        padding: 10px;
+    }
+
+    .widget-title {
+        font-size: 18px;
+    }
+}
+
+.forextime-widget {
+    position: relative;
+    padding: 30px 30px 0px 30px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Adjust height to cover the logo */
+    background-color: white;
+}
+
+
+    </style>
+
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <div class="custom-widget-container">
+      <h2 class="widget-title"> <img class="dark" id="logo-img" src="https://rifafx.com/site/assets/images/wblack.png" style="width:183px;" alt="logo"></h2>
+      <div class="forextime-widget" id="forex-widget-container">
+        <div class="overlay"></div>
+          <script type="text/javascript" src="//www.forextime.com/widget.js?type=profit-calculator&theme=dark&p=&pt=no&l=&h=390&"></script>
+      </div>
+  </div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- <script type="text/javascript" src="//www.forextime.com/widget.js?type=profit-calculator&theme=dark&p=&pt=no&l=&h=390&"></script> -->
+    <!-- <script>document.querySelector('.widget-footer').remove();</script> -->
+  </body>
+</html>
