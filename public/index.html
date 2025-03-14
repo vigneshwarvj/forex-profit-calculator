@@ -5,126 +5,253 @@
     <link rel="icon" href="https://rifafx.com/site/assets/images/loader.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
     <title>RIFAFX Profit Calculator</title>
 
     <style>
-      /* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-/* Custom container for the widget */
-.custom-widget-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+      /* Custom container for the widget */
+      .custom-widget-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        /* margin: auto; */
+      }
 
-/* Title style */
-.widget-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
+      /* Title style */
+      .widget-title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
 
-/* Styling for the widget container */
-.forextime-widget {
-    position: relative;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .custom-widget-container {
-        padding: 15px;
-    }
-
-    .widget-title {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .custom-widget-container {
+      /* Styling for the widget container */
+      .forextime-widget {
+        position: relative;
         padding: 10px;
-    }
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
 
-    .widget-title {
-        font-size: 18px;
-    }
-}
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .custom-widget-container {
+          padding: 15px;
+        }
 
-.forextime-widget {
-    position: relative;
-    padding: 30px 30px 0px 30px;
-}
+        .widget-title {
+          font-size: 20px;
+        }
 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px; /* Adjust height to cover the logo */
-    background-color: white;
-}
+        .overall-container {
+          flex-direction: column;
+          align-items: center;
+        }
 
+        .dark {
+          width: 70% !important;
+        }
+      }
 
+      @media (max-width: 480px) {
+        .custom-widget-container {
+          padding: 10px;
+        }
+
+        .widget-title {
+          font-size: 18px;
+        }
+
+        .dark {
+          width: 80% !important;
+        }
+        .container {
+          margin: 122px 0px 0px 0px;
+        }
+      }
+
+      .forextime-widget {
+        position: relative;
+        padding: 30px 30px 0px 30px;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: white;
+      }
+
+      .overall-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .rifafx-profit-calculator-text {
+        margin: 40px 40px 0px 40px;
+        text-align: center;
+      }
+
+      .container {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      li strong {
+        font-weight: bold;
+      }
+
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+
+      .mt-8 {
+        margin-top: 2rem;
+      }
+
+      .mt-2 {
+        margin-top: 0.5rem;
+      }
+
+      .bg-gray-100 {
+        background-color: #f7fafc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+      }
+
+      .container-body {
+        background-color: #f0f4f8;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
-
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <div class="custom-widget-container">
-      <h2 class="widget-title"> <img class="dark" id="logo-img" src="https://rifafx.com/site/assets/images/wblack.png" style="width:183px;" alt="logo"></h2>
-      <div class="forextime-widget" id="forex-widget-container">
-        <div class="overlay"></div>
-          <script type="text/javascript" src="//www.forextime.com/widget.js?type=profit-calculator&theme=dark&p=&pt=no&l=&h=390&"></script>
+    <div class="text-container">
+      <h1 class="rifafx-profit-calculator-text">Profit Calculator</h1>
+    </div>
+
+    <div class="overall-container">
+      <img
+        class="dark"
+        src="https://media-hosting.imagekit.io//bbdc55cba16f4f4e/Audit-rafiki%20(2).png?Expires=1836464498&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=neILS2BO7cWDvDMJURiG8A33rwhFEWZxCPpNGW2dVc1BWW07REnP5die~VGHWYBOGeRYyjkGCV9VoYNcIoOJFOrPkvL-5XpXoh8lMhJs~Aha4LEEG1LjwYFbLx-roncfRz32midhhdxgZBGnD5YuJeASvUw9jip0Qz3TLl01~t68Ch0ZI9-ZhoOMiO6XJKapvAQ7zsMoemH1FA-O1G7e0WDaJjvZrzrDW9NaSu538paBHwEPjwlL0aHCyCo2RMFjVxTCPr-KRqd5KBdcHumQZDp22gamUp8nbzQoUkbutz2SBaJ8lxMPk7kwYGtL~M~HRhVK3iCgxqYpug-1tsbUrA__"
+        alt="rifafx-calci-img"
+        style="width:32%;"
+      />
+
+      <div class="custom-widget-container">
+        <h2 class="widget-title">
+          <img
+            class="rifafx-logo"
+            id="logo-img"
+            src="https://rifafx.com/site/assets/images/wblack.png"
+            style="width:183px;"
+            alt="logo"
+          />
+        </h2>
+        <div class="forextime-widget" id="forex-widget-container">
+          <div class="overlay"></div>
+          <script
+            type="text/javascript"
+            src="//www.forextime.com/widget.js?type=profit-calculator&theme=dark&p=&pt=no&l=&h=390&"
+          ></script>
+        </div>
       </div>
-  </div>
+    </div>
 
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="container-body">
+      <div class="container">
+        <div class="bg-gray-100 mt-8">
+          <h3>How to use the calculator?</h3>
+          <p>Complete the following fields:</p>
+          <ul>
+            <li><strong>Currency pair</strong> - the currency you are trading</li>
+            <li><strong>Account currency</strong> - the deposit currency of your trading account</li>
+            <li><strong>Trade size</strong> - the trade size in lots or units</li>
+            <li><strong>Open price</strong> - the entry price of your trade</li>
+            <li><strong>Close price</strong> - the exit price of your trade</li>
+            <li><strong>Direction</strong> - either buy or sell (long or short)</li>
+          </ul>
+          <p class="mt-2">
+            The profit calculator takes the difference of entry and exit prices and multiplies it based on the pip value of your trade.
+          </p>
+        </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <div class="container-2">
+          <div class="bg-gray-100 mt-6">
+            <h3>Why is it important to use the calculator?</h3>
+            <p>
+              When planning your trade, it is important to understand the potential profit or loss of a trade. The Forex profit loss calculator can be used as a take profit or stop loss calculator.
+            </p>
+          </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <!-- <script type="text/javascript" src="//www.forextime.com/widget.js?type=profit-calculator&theme=dark&p=&pt=no&l=&h=390&"></script> -->
-    <!-- <script>document.querySelector('.widget-footer').remove();</script> -->
+          <div class="bg-gray-100 mt-6">
+            <h3>Forex Profit Calculator Trade Example</h3>
+            <p>
+              For example, using our calculator as a gold profit calculator, if you buy 100 units (standard lot of gold) of gold at $1890.00 and sell it at $1891.00, you would profit $100.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
